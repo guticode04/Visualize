@@ -7,6 +7,7 @@ For those that love music and want to see their favorite tracks or sounds come t
 * JavaScript
 * Web Audio API
 * HTML5
+* CSS
 
 ## Features
 
