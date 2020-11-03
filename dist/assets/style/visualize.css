@@ -31,6 +31,14 @@ i {
    font-family: 'Concert One', cursive;
 }
 
+.play {
+   display: block;
+   border: 1px solid;
+   margin: 2px 0;
+   text-align: center;
+   cursor: pointer;
+}
+
 #renderer {
    background-color: transparent;
    position: absolute;
@@ -48,4 +56,12 @@ i {
 .sample-track a:hover {
    color: red;
    border: 1px solid red;
+}
+
+.stop {
+   display: block;
+   border: 1px solid;
+   margin: 2px 0;
+   text-align: center;
+   cursor: pointer;
 }

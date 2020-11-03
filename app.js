@@ -1,11 +1,12 @@
 window.onload = function() {
    let canvas, ctx, audio, audioAnalyser, 
-      audioContext, source, frequencyArr;
+      audioContext, source, frequencyArr,
+      typeOfDisplay;
 
-   canvas = document.getElementById("renderer");
-   canvas.width = window.innerWidth;
-   canvas.height = window.innerHeight;
-   ctx = canvas.getContext("2d");
+   // canvas = document.getElementById("renderer");
+   // canvas.width = window.innerWidth;
+   // canvas.height = window.innerHeight;
+   // ctx = canvas.getContext("2d");
 
    // audio = new Audio();
    // audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -47,6 +48,19 @@ window.onload = function() {
          }
       }
    }
+
+   function stopAudio() {
+      if ( audioContext ) {
+         if ( audioContext.state === 'running') {
+            audioContext.suspend();
+         }
+      }
+   }
+
+   canvas = document.getElementById("renderer");
+   canvas.width = window.innerWidth;
+   canvas.height = window.innerHeight;
+   ctx = canvas.getContext("2d");
 
    function animationLoop() {
       
