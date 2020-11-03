@@ -1,8 +1,3 @@
-#renderer {
-   background-color: transparent;
-   position: absolute;
-   z-index: 1;
-}
 
 .creator-info {
    list-style: none;
@@ -34,4 +29,23 @@ i {
    justify-content: space-around;
    margin-top: 10px;
    font-family: 'Concert One', cursive;
+}
+
+#renderer {
+   background-color: transparent;
+   position: absolute;
+   z-index: 1;
+}
+
+.sample-track a {
+   border: 1px solid;
+   display: block;
+   padding: 5px;
+   margin-top: 5px;
+   cursor: pointer;
+}
+
+.sample-track a:hover {
+   color: red;
+   border: 1px solid red;
 }

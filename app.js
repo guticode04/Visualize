@@ -34,6 +34,21 @@ window.onload = function() {
       source.connect(audioContext.destination);
 
       audio.play();
+      animationLoop();
    }
 
+   document.getElementsByClassName('play').addEventListener('click', playAudio.bind(null,source));
+   document.getElementsByClassName('stop').addEventListener('click', stopAudio);
+
+   function playAudio() {
+      if ( audioContext ) {
+         if ( audioContext.state === 'suspended' ) {
+            audioContext.resume();
+         }
+      }
+   }
+
+   function animationLoop() {
+      
+   }
 }
