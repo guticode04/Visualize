@@ -62,6 +62,17 @@ window.onload = function() {
    canvas.height = window.innerHeight;
    ctx = canvas.getContext("2d");
 
+   function drawBar(x1, y1, x2, y2, width, frequency ) {
+      let lineColor = "rgb(" + frequency + ", " + frequency + ", " + 205 + ")";
+
+      ctx.strokeStyle = lineColor;
+      ctx.lineWidth = width;
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+   }
+
    function animationLoop() {
       
    }
