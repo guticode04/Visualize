@@ -1,3 +1,20 @@
+#circle {
+   text-align: right;
+   cursor: pointer;
+}
+
+#circle:hover {
+   background: red;
+}
+
+#circle-bars {
+   text-align: right;
+   cursor: pointer;
+}
+
+#circle-bars:hover {
+   background: red;
+}
 
 .creator-info {
    list-style: none;
@@ -64,4 +81,9 @@ i {
    margin: 2px 0;
    text-align: center;
    cursor: pointer;
+}
+
+.visual-options {
+   display: flex;
+   flex-direction: column;
 }
