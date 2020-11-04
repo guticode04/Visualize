@@ -1,17 +1,13 @@
 window.onload = function() {
+
    let canvas, ctx, audio, audioAnalyser, 
       audioContext, source, frequencyArr,
       typeOfDisplay;
 
-   // canvas = document.getElementById("renderer");
-   // canvas.width = window.innerWidth;
-   // canvas.height = window.innerHeight;
-   // ctx = canvas.getContext("2d");
+   // set default display type
+   typeOfDisplay = "circleBars";
 
-   // audio = new Audio();
-   // audioContext = new (window.AudioContext || window.webkitAudioContext)();
-   // audioAnalyser = audioContext.createAnalyser();
-
+   // Make sample track clickable
    let sampleTrack = document.getElementsByClassName('sample-track')[0];
 
    sampleTrack.addEventListener('click', function () {
@@ -22,6 +18,7 @@ window.onload = function() {
       setupTrackAudio();
    });
 
+   // Setup audio
    function setupTrackAudio() {
       audio.addEventListener('canplay', function () {
          // audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
@@ -45,6 +42,7 @@ window.onload = function() {
       animationLoop();
    }
 
+   // Controls Logic
    document.getElementsByClassName('play')[0].addEventListener('click', playAudio.bind(null,source));
    document.getElementsByClassName('stop')[0].addEventListener('click', stopAudio);
 
@@ -64,11 +62,13 @@ window.onload = function() {
       }
    }
 
+   // Setup Canvas
    canvas = document.getElementById("renderer");
    canvas.width = window.innerWidth;
    canvas.height = window.innerHeight;
    ctx = canvas.getContext('2d');
 
+   // Default Display Logic
    let bars = 200;
    let barWidth = 2;
 
@@ -112,7 +112,30 @@ window.onload = function() {
       ctx.stroke();
    }
 
+   // Second Visuals Options button
+   let circlesBtn = document.getElementById('circles');
+
+   circlesBtn.addEventListener('click', function () {
+      typeOfDisplay = "circles";
+   })
+   let hue = 240;
+
+   // Second Visuals Logic
+   function drawCircles(frequencyVal) {
+      let x = canvas.width / 2;
+      let y = canvas.height / 2;
+      ctx.beginPath();
+      ctx.arc(x - (frequencyVal / 8), y - (frequencyVal / 8), (Math.abs(frequencyVal - 120)) * 5, 0, 2 * Math.PI, false);
+      ctx.strokeStyle = 'hsla(' + hue + ',' + 100 + '%,' + 50 + '%,' + 0.6 + ')';
+      ctx.fillStyle = 'hsla(' + hue + ', 100%, 50%, .01)';
+
+      ctx.fill();
+      ctx.lineWidth = 4;
+      ctx.stroke();
+   }
+
    function animationLoop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       frequencyArr = new Uint8Array(audioAnalyser.frequencyBinCount);
       drawCircleBars(frequencyArr);
       requestAnimationFrame(animationLoop);
