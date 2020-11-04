@@ -12,19 +12,24 @@ window.onload = function() {
    // audioContext = new (window.AudioContext || window.webkitAudioContext)();
    // audioAnalyser = audioContext.createAnalyser();
 
-   let sampleTrack = document.getElementsByClassName("sample-track");
+   let sampleTrack = document.getElementsByClassName('sample-track')[0];
 
    sampleTrack.addEventListener('click', function () {
-      audio = new Audio('');
+      // audio = new Audio('./sounds/ImmigrantSong.mp3');
+      audio = new Audio();
+      audio.crossOrigin = 'anonymous'; //doesnt work for some reason
+      audio.src = './sounds/ImmigrantSong.mp3';
       setupTrackAudio();
    });
 
    function setupTrackAudio() {
       audio.addEventListener('canplay', function () {
-         audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
+         // audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
+         audioContext = audioContext || new (AudioContext || webkitAudioContext)();
          audioAnalyser = audioAnalyser || audioContext.createAnalyser();
          audioAnalyser.smoothingTimeConstant = 0.1;
-         audioAnalyser.fftSize = 512;//2048 -> 1024
+         // audioAnalyser.fftSize = 512;//2048 -> 1024
+         audioAnalyser.fftSize = 2048;//2048 -> 1024
          startAudio();
       })
    }
@@ -40,8 +45,8 @@ window.onload = function() {
       animationLoop();
    }
 
-   document.getElementsByClassName('play').addEventListener('click', playAudio.bind(null,source));
-   document.getElementsByClassName('stop').addEventListener('click', stopAudio);
+   document.getElementsByClassName('play')[0].addEventListener('click', playAudio.bind(null,source));
+   document.getElementsByClassName('stop')[0].addEventListener('click', stopAudio);
 
    function playAudio() {
       if ( audioContext ) {
@@ -62,7 +67,7 @@ window.onload = function() {
    canvas = document.getElementById("renderer");
    canvas.width = window.innerWidth;
    canvas.height = window.innerHeight;
-   ctx = canvas.getContext("2d");
+   ctx = canvas.getContext('2d');
 
    let bars = 200;
    let barWidth = 2;
@@ -79,6 +84,7 @@ window.onload = function() {
       ctx.stroke();
 
       let radians, x, y, xEnd, yEnd, barHeight;
+      audioAnalyser.getByteFrequencyData(frequencyArr);
       for (let i = 0; i < bars; i++) {
          // divide circle into equal parts
          radians = (Math.PI * 2) / bars;
@@ -107,6 +113,8 @@ window.onload = function() {
    }
 
    function animationLoop() {
-      
+      frequencyArr = new Uint8Array(audioAnalyser.frequencyBinCount);
+      drawCircleBars(frequencyArr);
+      requestAnimationFrame(animationLoop);
    }
 }
