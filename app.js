@@ -91,6 +91,7 @@ window.onload = function() {
 
       let radians, x, y, xEnd, yEnd, barHeight;
       audioAnalyser.getByteFrequencyData(frequencyArr);
+      // audioAnalyser.getByteTimeDomainData(frequencyArr);
       for (let i = 0; i < bars; i++) {
          // divide circle into equal parts
          radians = (Math.PI * 2) / bars;
@@ -125,19 +126,20 @@ window.onload = function() {
       typeOfDisplay = "circles";
    })
 
-   let hue = 240;
-
+   let hue = 0; //280 violet color
+   let width = canvas.width;
+   let height = canvas.height;
    // Second Visuals Logic
    function drawCircles(frequencyVal) {
-      let x = canvas.width / 2;
-      let y = canvas.height / 2;
+      let x = ((width / 2));
+      let y = ((height / 2));
       ctx.beginPath();
       ctx.arc(x - (frequencyVal / 8), y - (frequencyVal / 8), (Math.abs(frequencyVal - 120)) * 5, 0, 2 * Math.PI, false);
-      ctx.strokeStyle = 'hsla(' + hue + ',' + 100 + '%,' + 50 + '%,' + 0.6 + ')';
-      ctx.fillStyle = 'hsla(' + hue + ', 100%, 50%, .01)';
+      ctx.strokeStyle = 'hsla(' + hue + ',' + 100 + '%,' + 40 + '%,' + 0.1 + ')';
+      ctx.fillStyle = 'hsla(' + hue + ', 100%, 40%, .01)';
 
       ctx.fill();
-      ctx.lineWidth = 4;
+      ctx.lineWidth = 2;
       ctx.stroke();
    }
 
@@ -147,7 +149,8 @@ window.onload = function() {
       if ( typeOfDisplay === "circleBars") {
          drawCircleBars(frequencyArr);
       } else if ( typeOfDisplay === "circles" ) {
-         audioAnalyser.getByteFrequencyData(frequencyArr);
+         // audioAnalyser.getByteFrequencyData(frequencyArr);
+         audioAnalyser.getByteTimeDomainData(frequencyArr);
          let length = frequencyArr.length;
          for( let i = 0; i < length; i++ ) {
             drawCircles(frequencyArr[i]);

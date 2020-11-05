@@ -56,6 +56,11 @@ i {
    cursor: pointer;
 }
 
+.play:hover {
+   color: red;
+   border: 1px solid red;
+}
+
 #renderer {
    background-color: transparent;
    position: absolute;
@@ -81,6 +86,11 @@ i {
    margin: 2px 0;
    text-align: center;
    cursor: pointer;
+}
+
+.stop:hover {
+   color: red;
+   border: 1px solid red;
 }
 
 .visual-options {
