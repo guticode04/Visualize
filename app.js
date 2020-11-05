@@ -68,6 +68,12 @@ window.onload = function() {
    canvas.height = window.innerHeight;
    ctx = canvas.getContext('2d');
 
+   // Default Display Btn 
+   let circleBarsBtn = document.getElementById('circle-bars');
+   circleBarsBtn.addEventListener('click', function () {
+      typeOfDisplay = "circleBars";
+   });
+   
    // Default Display Logic
    let bars = 200;
    let barWidth = 2;
@@ -118,6 +124,7 @@ window.onload = function() {
    circlesBtn.addEventListener('click', function () {
       typeOfDisplay = "circles";
    })
+
    let hue = 240;
 
    // Second Visuals Logic
@@ -137,7 +144,15 @@ window.onload = function() {
    function animationLoop() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       frequencyArr = new Uint8Array(audioAnalyser.frequencyBinCount);
-      drawCircleBars(frequencyArr);
+      if ( typeOfDisplay === "circleBars") {
+         drawCircleBars(frequencyArr);
+      } else if ( typeOfDisplay === "circles" ) {
+         audioAnalyser.getByteFrequencyData(frequencyArr);
+         let length = frequencyArr.length;
+         for( let i = 0; i < length; i++ ) {
+            drawCircles(frequencyArr[i]);
+         }
+      }
       requestAnimationFrame(animationLoop);
    }
 }
