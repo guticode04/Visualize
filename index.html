@@ -18,49 +18,54 @@
    <script src="https://kit.fontawesome.com/c661c20165.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <header class="header">
-      <h1>Visualize</h1>
-      <ul class="creator-info">
-         <li>
-            <a href="https://github.com/guticode04">
-               <i class="fab fa-github"></i>
-            </a>
-         </li>
-         <li>
-            <a href="https://angel.co/u/gustavo-gutierrez-9">
-               <i class="fab fa-angellist"></i>
-            </a>
-         </li>
-         <li>
-            <a href="https://www.linkedin.com/in/gustavo-gutierrez-7379141a8/">
-               <i class="fab fa-linkedin"></i>
-            </a>
-         </li>
-         <li>
-            <a href="https://gusgutierrez.com/">
-               <i class="fas fa-user-tie"></i>
-            </a>
-         </li>
-      </ul>
-   </header>
-   <div class="options-controls">
-      <div class="track-options">
-         Track Options
-         <div class="sample-track">
-            <a>Play Sample Track</a>
+   <div class="left-sidebar">
+
+      <header class="header">
+         <h1>Visualize</h1>
+         <ul class="creator-info">
+            <li>
+               <a href="https://github.com/guticode04">
+                  <i class="fab fa-github"></i>
+               </a>
+            </li>
+            <li>
+               <a href="https://angel.co/u/gustavo-gutierrez-9">
+                  <i class="fab fa-angellist"></i>
+               </a>
+            </li>
+            <li>
+               <a href="https://www.linkedin.com/in/gustavo-gutierrez-7379141a8/">
+                  <i class="fab fa-linkedin"></i>
+               </a>
+            </li>
+            <li>
+               <a href="https://gusgutierrez.com/">
+                  <i class="fas fa-user-tie"></i>
+               </a>
+            </li>
+         </ul>
+      </header>
+      <div class="options-controls">
+         <div class="track-options">
+            Track Options
+            <div class="sample-track">
+               <a>Play Sample Track</a>
+            </div>
+         </div>
+         <div class="controls">
+            Controls
+            <p class="play">Play</p>
+            <p class="stop">Stop</p>
+         </div>
+         <div class="visual-options">
+            Visual Options
+            <a id="circle-bars">Circle Bars</a>
+            <a id="circles">Circles</a>
          </div>
       </div>
-      <div class="controls">
-         Controls
-         <p class="play">Play</p>
-         <p class="stop">Stop</p>
-      </div>
-      <div class="visual-options">
-         Visual Options
-         <a id="circle-bars">Circle Bars</a>
-         <a id="circles">Circles</a>
-      </div>
+
    </div>
+   <div class="right-sidebar">This is supposed to me divd from the left-sidebar</div>
    <canvas id="renderer"></canvas>
 </body>
 </html>

@@ -1,19 +1,27 @@
+body {
+   background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1));
+}
+
 #circles {
-   text-align: right;
+   text-align: center;
    cursor: pointer;
+   border: 1px solid;
+   margin: 2px 0;
 }
 
 #circles:hover {
-   background: red;
+   color: red;
 }
 
 #circle-bars {
-   text-align: right;
+   text-align: center;
    cursor: pointer;
+   border: 1px solid;
+   margin: 2px 0;
 }
 
 #circle-bars:hover {
-   background: red;
+   color: red;
 }
 
 .creator-info {
@@ -31,6 +39,9 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+   position: absolute;
+   left: 120px;
+   z-index: 2;
 }
 
 .header > h1 {
@@ -41,11 +52,20 @@ i {
    color: black;
 }
 
+.left-sidebar {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
 .options-controls {
    display: flex;
-   justify-content: space-around;
-   margin-top: 10px;
+   flex-direction: column;
+   /* margin-top: 10px; */
    font-family: 'Concert One', cursive;
+   position: absolute;
+   top: 150px;
+   left: 120px;
 }
 
 .play {
@@ -61,10 +81,18 @@ i {
    border: 1px solid red;
 }
 
-#renderer {
+/* #renderer {
    background-color: transparent;
    position: absolute;
    z-index: 1;
+   /* z-index: 50; */
+/* } */
+ 
+.right-sidebar {
+   position: absolute;
+   z-index: 2;
+   right: 50px;
+   top: 150px;
 }
 
 .sample-track a {

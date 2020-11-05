@@ -2,6 +2,8 @@
 
 For those that love music and want to see their favorite tracks or sounds come to life there is Visualize. 
 
+[Visualize Here](gusgutierrez.com/Visualize)
+
 ## Technologies
 
 * JavaScript
