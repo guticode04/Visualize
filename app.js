@@ -2,10 +2,22 @@ window.onload = function() {
 
    let canvas, ctx, audio, audioAnalyser, 
       audioContext, source, frequencyArr,
-      typeOfDisplay;
+      typeOfDisplay, uploadedFile;
 
    // set default display type
    typeOfDisplay = "circleBars";
+
+   // file upload logic
+   let fileInput = document.getElementById('file-upload');
+
+   fileInput.addEventListener('change', function(event){
+      if ( !audioContext || audioContext.state !== "running" ) {
+         uploadedFile = URL.createObjectURL(event.target.files[0]);
+         audio = new Audio();
+         audio.src = uploadedFile;
+         setupTrackAudio();
+      }
+   })
 
    // Make sample track clickable
    let sampleTrack = document.getElementsByClassName('sample-track')[0];
