@@ -1,5 +1,9 @@
 body {
-   background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1));
+   /* background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1)); */
+   /* background-image: linear-gradient(to bottom right, #1e3c72, #2a5298); */
+   /* background-image: linear-gradient(to bottom right, #1b1b1b, #000000); */
+   background-color: black;
+   color: white;
 }
 
 #circles {
@@ -10,18 +14,18 @@ body {
 }
 
 #circles:hover {
-   color: red;
+   color: blue;
 }
 
 #circle-bars {
    text-align: center;
    cursor: pointer;
    border: 1px solid;
-   margin: 2px 0;
+   margin: 8px 0;
 }
 
 #circle-bars:hover {
-   color: red;
+   color: blue;
 }
 
 .creator-info {
@@ -33,6 +37,18 @@ body {
 
 .creator-info > li {
    padding: 5px;
+}
+
+.file-upload-btn {
+   border: 1px solid;
+   cursor: pointer;
+   margin: 8px 0;
+   padding: 2px;
+   text-align: center;
+}
+
+.file-upload-btn:hover {
+   color: red;
 }
 
 .header {
@@ -49,7 +65,15 @@ body {
 }
 
 i {
-   color: black;
+   color: white;
+}
+
+i:hover {
+   color: blue;
+}
+
+input[type="file"] {
+   display: none;
 }
 
 .left-sidebar {
@@ -70,7 +94,7 @@ i {
 .play {
    display: block;
    border: 1px solid;
-   margin: 2px 0;
+   margin: 8px 0;
    text-align: center;
    cursor: pointer;
 }
@@ -116,4 +140,5 @@ i {
 .visual-options {
    display: flex;
    flex-direction: column;
+   margin-top: 92px;
 }
