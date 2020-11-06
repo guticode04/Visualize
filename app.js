@@ -23,22 +23,17 @@ window.onload = function() {
    let sampleTrack = document.getElementsByClassName('sample-track')[0];
 
    sampleTrack.addEventListener('click', function () {
-      // audio = new Audio('./sounds/ImmigrantSong.mp3');
-      audio = new Audio();
-      audio.crossOrigin = 'anonymous'; //doesnt work for some reason
-      audio.src = './sounds/ImmigrantSong.mp3';
+      audio = new Audio('./sounds/ImmigrantSong.mp3');
       setupTrackAudio();
    });
 
    // Setup audio
    function setupTrackAudio() {
       audio.addEventListener('canplay', function () {
-         // audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
          audioContext = audioContext || new (AudioContext || webkitAudioContext)();
          audioAnalyser = audioAnalyser || audioContext.createAnalyser();
          audioAnalyser.smoothingTimeConstant = 0.1;
-         // audioAnalyser.fftSize = 512;//2048 -> 1024
-         audioAnalyser.fftSize = 2048;//2048 -> 1024
+         // audioAnalyser.fftSize = 2048;//2048 -> 1024
          startAudio();
       })
    }
@@ -103,7 +98,6 @@ window.onload = function() {
 
       let radians, x, y, xEnd, yEnd, barHeight;
       audioAnalyser.getByteFrequencyData(frequencyArr);
-      // audioAnalyser.getByteTimeDomainData(frequencyArr);
       for (let i = 0; i < bars; i++) {
          // divide circle into equal parts
          radians = (Math.PI * 2) / bars;
@@ -161,7 +155,7 @@ window.onload = function() {
       if ( typeOfDisplay === "circleBars") {
          drawCircleBars(frequencyArr);
       } else if ( typeOfDisplay === "circles" ) {
-         // audioAnalyser.getByteFrequencyData(frequencyArr);
+         audioAnalyser.fftSize = 512;
          audioAnalyser.getByteTimeDomainData(frequencyArr);
          let length = frequencyArr.length;
          for( let i = 0; i < length; i++ ) {
