@@ -115,6 +115,8 @@ window.onload = function() {
    }
 
    function drawBar(x1, y1, x2, y2, width, frequency ) {
+      // will render in black and white / gray
+      // let lineColor = "rgb(" + frequency + ", " + frequency + ", " + frequency + ")";
       let lineColor = "rgb(" + frequency + ", " + frequency + ", " + 205 + ")";
 
       ctx.strokeStyle = lineColor;
@@ -148,6 +150,9 @@ window.onload = function() {
       ctx.lineWidth = 2;
       ctx.stroke();
    }
+
+   // Third Visual Logic
+   
 
    function animationLoop() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);

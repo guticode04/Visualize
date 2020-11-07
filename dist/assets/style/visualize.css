@@ -1,3 +1,14 @@
+#bars {
+   text-align: center;
+   cursor: pointer;
+   border: 1px solid;
+   margin: 8px 0 0 0;
+}
+
+#bars:hover {
+   color: blue;
+}
+
 body {
    /* background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1)); */
    /* background-image: linear-gradient(to bottom right, #1e3c72, #2a5298); */
