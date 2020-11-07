@@ -151,8 +151,31 @@ window.onload = function() {
       ctx.stroke();
    }
 
+   let graphBarsBtn = document.getElementById('bars');
+   graphBarsBtn.addEventListener('click', function () {
+      typeOfDisplay = "bars"
+   })
+
+   let graphBarWidth, graphBarHeight, x;
+
    // Third Visual Logic
-   
+   function drawGraphBars(frequencyArr) {
+      let bufferLength = audioAnalyser.frequencyBinCount;
+      graphBarWidth = (width / bufferLength); //*2.5
+      x = 0;
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, width, height);
+      audioAnalyser.getByteFrequencyData(frequencyArr);
+      for (let i = 0; i < bufferLength; i++) {
+         graphBarHeight = frequencyArr[i];
+         let r = graphBarHeight + (25 * (i / bufferLength));
+         let g = 250 * (i / bufferLength);
+         let b = 50;
+         ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+         ctx.fillRect = (x, height - graphBarHeight, graphBarWidth, graphBarHeight)
+      }
+      
+   }
 
    function animationLoop() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -166,6 +189,9 @@ window.onload = function() {
          for( let i = 0; i < length; i++ ) {
             drawCircles(frequencyArr[i]);
          }
+      } else if ( typeOfDisplay === "bars") {
+         audioAnalyser.fftSize = 256;
+         drawGraphBars(frequencyArr)
       }
       requestAnimationFrame(animationLoop);
    }
