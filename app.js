@@ -115,8 +115,7 @@ window.onload = function() {
    }
 
    function drawBar(x1, y1, x2, y2, width, frequency ) {
-      // will render in black and white / gray
-      // let lineColor = "rgb(" + frequency + ", " + frequency + ", " + frequency + ")";
+
       let lineColor = "rgb(" + frequency + ", " + frequency + ", " + 205 + ")";
 
       ctx.strokeStyle = lineColor;
@@ -137,6 +136,7 @@ window.onload = function() {
    let hue = 0; //280 violet color
    let width = canvas.width;
    let height = canvas.height;
+
    // Second Visuals Logic
    function drawCircles(frequencyVal) {
       let x = ((width / 2));
@@ -156,15 +156,14 @@ window.onload = function() {
       typeOfDisplay = "bars"
    })
 
-   let graphBarWidth, graphBarHeight, x;
-
+   
    // Third Visual Logic
    function drawGraphBars(frequencyArr) {
+      let graphBarWidth, graphBarHeight, x;
       let bufferLength = audioAnalyser.frequencyBinCount;
-      graphBarWidth = (width / bufferLength); //*2.5
+      graphBarWidth = (width / bufferLength) * 2.5; //*2.5
       x = 0;
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, width, height);
+
       audioAnalyser.getByteFrequencyData(frequencyArr);
       for (let i = 0; i < bufferLength; i++) {
          graphBarHeight = frequencyArr[i];
@@ -172,9 +171,9 @@ window.onload = function() {
          let g = 250 * (i / bufferLength);
          let b = 50;
          ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-         ctx.fillRect = (x, height - graphBarHeight, graphBarWidth, graphBarHeight)
-      }
-      
+         ctx.fillRect(x, height - graphBarHeight, graphBarWidth, graphBarHeight);
+         x += graphBarWidth + 1;
+      } 
    }
 
    function animationLoop() {
