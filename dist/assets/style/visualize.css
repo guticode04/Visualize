@@ -1,78 +1,13 @@
-#bars {
-   text-align: center;
-   cursor: pointer;
-   border: 1px solid;
-   margin: 8px 0 0 0;
-}
-
-#bars:hover {
-   color: blue;
-}
-
+/* For Mobile */
 body {
-   /* background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1)); */
-   /* background-image: linear-gradient(to bottom right, #1e3c72, #2a5298); */
-   /* background-image: linear-gradient(to bottom right, #1b1b1b, #000000); */
    background-color: black;
    color: white;
-}
-
-#circles {
-   text-align: center;
-   cursor: pointer;
-   border: 1px solid;
-   margin: 2px 0;
-}
-
-#circles:hover {
-   color: blue;
-}
-
-#circle-bars {
-   text-align: center;
-   cursor: pointer;
-   border: 1px solid;
-   margin: 8px 0;
-}
-
-#circle-bars:hover {
-   color: blue;
-}
-
-.creator-info {
-   list-style: none;
-   display: flex;
-   padding: 0;
-   margin: 0;
-}
-
-.creator-info > li {
-   padding: 5px;
-}
-
-.file-upload-btn {
-   border: 1px solid;
-   cursor: pointer;
-   margin: 8px 0;
-   padding: 2px;
-   text-align: center;
-}
-
-.file-upload-btn:hover {
-   color: red;
+   font-family: 'Concert One', cursive;
 }
 
 .header {
    display: flex;
-   flex-direction: column;
-   align-items: center;
-   position: absolute;
-   left: 120px;
-   z-index: 2;
-}
-
-.header > h1 {
-   font-family: 'Concert One', cursive;
+   justify-content: center;
 }
 
 i {
@@ -87,69 +22,162 @@ input[type="file"] {
    display: none;
 }
 
-.left-sidebar {
-   display: flex;
-   flex-direction: column;
-   position: relative;
-}
 
-.options-controls {
-   display: flex;
-   flex-direction: column;
-   font-family: 'Concert One', cursive;
-   position: absolute;
-   top: 150px;
-   left: 120px;
-}
+/* For Desktop */
+@media only screen and (min-width: 768px) {
+   #bars {
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid;
+      margin: 8px 0 0 0;
+   }
 
-.play {
-   display: block;
-   border: 1px solid;
-   margin: 8px 0;
-   text-align: center;
-   cursor: pointer;
-}
+   #bars:hover {
+      color: blue;
+   }
 
-.play:hover {
-   color: red;
-   border: 1px solid red;
-}
- 
-.right-sidebar {
-   position: absolute;
-   z-index: 2;
-   right: 120px;
-   font-family: 'Concert One', cursive;
-}
+   body {
+      /* background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1)); */
+      /* background-image: linear-gradient(to bottom right, #1e3c72, #2a5298); */
+      /* background-image: linear-gradient(to bottom right, #1b1b1b, #000000); */
+      background-color: black;
+      color: white;
+   }
 
-.sample-track a {
-   border: 1px solid;
-   display: block;
-   padding: 5px;
-   margin-top: 5px;
-   cursor: pointer;
-}
+   #circles {
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid;
+      margin: 2px 0;
+   }
 
-.sample-track a:hover {
-   color: red;
-   border: 1px solid red;
-}
+   #circles:hover {
+      color: blue;
+   }
 
-.stop {
-   display: block;
-   border: 1px solid;
-   margin: 2px 0;
-   text-align: center;
-   cursor: pointer;
-}
+   #circle-bars {
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid;
+      margin: 8px 0;
+   }
 
-.stop:hover {
-   color: red;
-   border: 1px solid red;
-}
+   #circle-bars:hover {
+      color: blue;
+   }
 
-.visual-options {
-   display: flex;
-   flex-direction: column;
-   margin-top: 92px;
+   .creator-info {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+   }
+
+   .creator-info > li {
+      padding: 5px;
+   }
+
+   .file-upload-btn {
+      border: 1px solid;
+      cursor: pointer;
+      margin: 8px 0;
+      padding: 2px;
+      text-align: center;
+   }
+
+   .file-upload-btn:hover {
+      color: red;
+   }
+
+   .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      left: 120px;
+      z-index: 2;
+   }
+
+   .header > h1 {
+      font-family: 'Concert One', cursive;
+   }
+
+   i {
+      color: white;
+   }
+
+   i:hover {
+      color: blue;
+   }
+
+   input[type="file"] {
+      display: none;
+   }
+
+   .left-sidebar {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+   }
+
+   .options-controls {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Concert One', cursive;
+      position: absolute;
+      top: 150px;
+      left: 120px;
+   }
+
+   .play {
+      display: block;
+      border: 1px solid;
+      margin: 8px 0;
+      text-align: center;
+      cursor: pointer;
+   }
+
+   .play:hover {
+      color: red;
+      border: 1px solid red;
+   }
+   
+   .right-sidebar {
+      position: absolute;
+      z-index: 2;
+      right: 120px;
+      font-family: 'Concert One', cursive;
+   }
+
+   .sample-track a {
+      border: 1px solid;
+      display: block;
+      padding: 5px;
+      margin-top: 5px;
+      cursor: pointer;
+   }
+
+   .sample-track a:hover {
+      color: red;
+      border: 1px solid red;
+   }
+
+   .stop {
+      display: block;
+      border: 1px solid;
+      margin: 2px 0;
+      text-align: center;
+      cursor: pointer;
+   }
+
+   .stop:hover {
+      color: red;
+      border: 1px solid red;
+   }
+
+   .visual-options {
+      display: flex;
+      flex-direction: column;
+      margin-top: 92px;
+   }
 }
