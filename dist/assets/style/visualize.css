@@ -5,6 +5,27 @@ body {
    font-family: 'Concert One', cursive;
 }
 
+.creator-info {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+   }
+
+.creator-info > li {
+   padding: 5px;
+}
+
+.file-upload-btn {
+   border: 1px solid;
+   cursor: pointer;
+   padding: 2px;
+}
+
+.file-upload-btn:hover {
+   color: red;
+}
+
 .header {
    display: flex;
    justify-content: center;
@@ -22,6 +43,53 @@ input[type="file"] {
    display: none;
 }
 
+.options-controls {
+   display: flex;
+   justify-content: space-around;
+}
+
+.play {
+   margin: 0 0 5px 0;
+   border: 1px solid;
+   text-align: center;
+}
+
+.play:hover {
+   color: blue;
+}
+
+.sample-track {
+   margin: 0 0 10px 0;
+}
+
+.sample-track a {
+   border: 1px solid;
+   margin: 0 0 7px 0;
+   padding: 2px;
+}
+
+.sample-track a:hover {
+   color: red;
+}
+
+.section-title {
+   margin: 0 0 5px 0;
+}
+
+.stop {
+   margin: 0;
+   border: 1px solid;
+   text-align: center;
+}
+
+.stop:hover {
+   color: blue;
+}
+
+/* For Tablets */
+/* @media only screen and (min-width: 600px) {
+
+} */
 
 /* For Desktop */
 @media only screen and (min-width: 768px) {
@@ -154,6 +222,7 @@ input[type="file"] {
       display: block;
       padding: 5px;
       margin-top: 5px;
+      margin-bottom: 10px;
       cursor: pointer;
    }
 
