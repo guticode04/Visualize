@@ -160,13 +160,10 @@ input[type="file"] {
    }
 
    #bars:hover {
-      color: blue;
+      color: red;
    }
 
    body {
-      /* background-image: linear-gradient(to bottom right, rgba(35, 7, 77, 1), rgba(204, 83, 51, 1)); */
-      /* background-image: linear-gradient(to bottom right, #1e3c72, #2a5298); */
-      /* background-image: linear-gradient(to bottom right, #1b1b1b, #000000); */
       background-color: black;
       color: white;
    }
@@ -179,7 +176,7 @@ input[type="file"] {
    }
 
    #circles:hover {
-      color: blue;
+      color: red;
    }
 
    #circle-bars {
@@ -190,7 +187,7 @@ input[type="file"] {
    }
 
    #circle-bars:hover {
-      color: blue;
+      color: red;
    }
 
    .creator-info {
@@ -216,14 +213,11 @@ input[type="file"] {
       color: red;
    }
 
-   .header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      left: 120px;
-      z-index: 2;
-   }
+  .footer {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+  }
 
    .header > h1 {
       font-family: 'Concert One', cursive;
@@ -234,7 +228,7 @@ input[type="file"] {
    }
 
    i:hover {
-      color: blue;
+      color: red;
    }
 
    input[type="file"] {
@@ -249,11 +243,7 @@ input[type="file"] {
 
    .options-controls {
       display: flex;
-      flex-direction: column;
       font-family: 'Concert One', cursive;
-      position: absolute;
-      top: 150px;
-      left: 120px;
    }
 
    .play {
@@ -269,12 +259,6 @@ input[type="file"] {
       border: 1px solid red;
    }
    
-   .right-sidebar {
-      position: absolute;
-      z-index: 2;
-      right: 120px;
-      font-family: 'Concert One', cursive;
-   }
 
    .sample-track a {
       border: 1px solid;
@@ -306,6 +290,5 @@ input[type="file"] {
    .visual-options {
       display: flex;
       flex-direction: column;
-      margin-top: 92px;
    }
 }
