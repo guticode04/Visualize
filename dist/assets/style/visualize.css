@@ -84,6 +84,14 @@ input[type="file"] {
    display: none;
 }
 
+.modal {
+   z-index: 1;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
 .options-controls {
    display: flex;
    justify-content: space-around;
