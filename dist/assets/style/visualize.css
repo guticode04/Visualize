@@ -34,6 +34,13 @@ body {
    border-radius: 2px;
 }
 
+.close-modal {
+   float: right;
+   font-weight: bold;
+   font-size: 24px;
+   padding-right: 5px;
+}
+
 .creator-info {
    list-style: none;
    display: flex;
@@ -90,6 +97,16 @@ input[type="file"] {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   overflow: auto; /* enable scroll if needed */
+   height: 50%;
+   /* background-color: rgb(255,255,255);
+   background-color: rgba(255,255,255,0.6); */
+   background: white;
+   color: black;
+}
+
+.modal-content {
+   padding: 5px;
 }
 
 .options-controls {

@@ -2,8 +2,17 @@ window.onload = function() {
 
    let canvas, ctx, audio, audioAnalyser, 
       audioContext, source, frequencyArr,
-      typeOfDisplay, uploadedFile;
+      typeOfDisplay, uploadedFile, closeModal,
+      modalIntro;
 
+   // Close modal logic
+   closeModal = document.getElementsByClassName("close-modal")[0];
+   modalIntro = document.getElementById("intro");
+
+   closeModal.addEventListener('click', function () {
+      modalIntro.style.display = "none"
+   })
+   
    // set default display type
    typeOfDisplay = "circleBars";
 
