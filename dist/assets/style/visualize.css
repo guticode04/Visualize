@@ -53,6 +53,11 @@ body {
    padding: 5px;
 }
 
+.description {
+   text-align: center;
+   padding: 2px;
+}
+
 .file-upload-btn {
    border: 1px solid;
    cursor: pointer;
@@ -215,6 +220,14 @@ input[type="file"] {
       color: red;
    }
 
+   .close-modal {
+      cursor: pointer;
+   }
+
+   .close-modal:hover {
+      color: red;
+   }
+
    .creator-info {
       list-style: none;
       display: flex;
@@ -224,6 +237,11 @@ input[type="file"] {
 
    .creator-info > li {
       padding: 5px;
+   }
+
+   .description {
+      padding: 10px;
+      text-align: center;
    }
 
    .file-upload-btn {
@@ -264,6 +282,15 @@ input[type="file"] {
       display: flex;
       flex-direction: column;
       position: relative;
+   }
+
+   .modal {
+      height: fit-content;
+      width: 30%;
+   }
+   
+   .modal-content {
+      padding: 10px;
    }
 
    .options-controls {
