@@ -4,6 +4,8 @@ For those that love music and want to see their favorite tracks or sounds come t
 
 [Visualize Here](gusgutierrez.com/Visualize)
 
+![alt text](.images/desktopView.png)
+
 ## Technologies
 
 * JavaScript
@@ -17,7 +19,9 @@ For those that love music and want to see their favorite tracks or sounds come t
 * Users can play their own recordings
 * Users can adjust style of visualization
 
-## Wireframe
+## Future Features
 
-![alt text](./images/VisualizeWireframe.png)
+* 3D visualization styles
+* Option to change visualization color
+* Cycle visualization through all colors
 
