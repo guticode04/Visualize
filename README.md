@@ -4,7 +4,7 @@ For those that love music and want to see their favorite tracks or sounds come t
 
 [Visualize Here](gusgutierrez.com/Visualize)
 
-![alt text](.images/desktopView.png)
+![alt text](./images/desktopView.png)
 
 ## Technologies
 
