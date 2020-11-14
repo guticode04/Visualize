@@ -3,7 +3,7 @@
 #bars {
    border: 1px solid;
    text-align: center;
-   padding: 2px;
+   padding: 2px 6px;
    border-radius: 2px;
 }
 
@@ -20,7 +20,7 @@ body {
 #circles {
    border: 1px solid;
    text-align: center;
-   padding: 2px;
+   padding: 2px 4px;
    margin: 0 0 5px 0;
    border-radius: 2px;
 }
@@ -29,7 +29,7 @@ body {
    border: 1px solid;
    cursor: pointer;
    text-align: center;
-   padding: 2px;
+   padding: 2px 3px;
    margin: 0 0 5px 0;
    border-radius: 2px;
 }
@@ -61,7 +61,7 @@ body {
 .file-upload-btn {
    border: 1px solid;
    cursor: pointer;
-   padding: 2px;
+   padding: 2px 9px;
    border-radius: 2px;
 }
 
@@ -104,8 +104,6 @@ input[type="file"] {
    transform: translate(-50%, -50%);
    overflow: auto; /* enable scroll if needed */
    height: 50%;
-   /* background-color: rgb(255,255,255);
-   background-color: rgba(255,255,255,0.6); */
    background: white;
    color: black;
 }
@@ -124,6 +122,7 @@ input[type="file"] {
    border: 1px solid;
    text-align: center;
    border-radius: 2px;
+   padding: 2px 0;
 }
 
 .play:hover {
@@ -138,16 +137,17 @@ input[type="file"] {
    z-index: -1;
 }
 
-
-.sample-track {
-   margin: 0 0 10px 0;
+.right-sidebar {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-.sample-track a {
+.sample-track {
+   margin: 0 0 8px 0;
    border: 1px solid;
-   margin: 0 0 7px 0;
-   padding: 2px;
    border-radius: 2px;
+   padding: 2px;
 }
 
 .sample-track a:hover {
@@ -163,6 +163,7 @@ input[type="file"] {
    border: 1px solid;
    text-align: center;
    border-radius: 2px;
+   padding: 2px 0;
 }
 
 .stop:hover {
@@ -186,7 +187,7 @@ input[type="file"] {
       text-align: center;
       cursor: pointer;
       border: 1px solid;
-      margin: 8px 0 0 0;
+      padding: 2px 18px;
    }
 
    #bars:hover {
@@ -202,7 +203,8 @@ input[type="file"] {
       text-align: center;
       cursor: pointer;
       border: 1px solid;
-      margin: 2px 0;
+      margin: 2px 8px 2px 0;
+      padding: 2px 10px;
    }
 
    #circles:hover {
@@ -213,7 +215,8 @@ input[type="file"] {
       text-align: center;
       cursor: pointer;
       border: 1px solid;
-      margin: 8px 0;
+      margin: 8px;
+      padding: 2px 8px;
    }
 
    #circle-bars:hover {
@@ -233,6 +236,7 @@ input[type="file"] {
       display: flex;
       padding: 0;
       margin: 0;
+      font-size: 26px;
    }
 
    .creator-info > li {
@@ -248,7 +252,7 @@ input[type="file"] {
       border: 1px solid;
       cursor: pointer;
       margin: 8px 0;
-      padding: 2px;
+      padding: 2px 10px;
       text-align: center;
    }
 
@@ -281,7 +285,6 @@ input[type="file"] {
    .left-sidebar {
       display: flex;
       flex-direction: column;
-      position: relative;
    }
 
    .modal {
@@ -304,6 +307,7 @@ input[type="file"] {
       margin: 8px 0;
       text-align: center;
       cursor: pointer;
+      padding: 2px 20px;
    }
 
    .play:hover {
@@ -311,21 +315,27 @@ input[type="file"] {
       border: 1px solid red;
    }
    
+   .right-sidebar {
+      margin-top: 5px;
+   }
 
-   .sample-track a {
+   .sample-track {
       border: 1px solid;
       display: block;
-      padding: 5px;
+      padding: 2px;
       margin-top: 5px;
       margin-bottom: 10px;
       cursor: pointer;
    }
 
-   .sample-track a:hover {
+   .sample-track:hover {
       color: red;
-      border: 1px solid red;
    }
 
+   .section-title {
+      margin: 0;
+   }
+   
    .stop {
       display: block;
       border: 1px solid;
@@ -341,6 +351,6 @@ input[type="file"] {
 
    .visual-options {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
    }
 }
